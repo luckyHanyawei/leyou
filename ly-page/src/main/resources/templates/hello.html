@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+    <h1>
+        <p><span th:text="${user.name.toUpperCase()}"></span></p>
+        <p><span th:text="${user.age}"></span></p>
+        <p><span th:text="${user.friend.name.substring(1)}"></span></p>
+
+        <p>
+            <span th:text="${#dates.format(#dates.createNow(), 'yyyy-MM-dd')}"></span>
+
+        </p>
+        <p><span th:text="1 + 4 * 2 > 10"></span></p>
+
+        <p th:if="2 > 3">true</p>
+    </h1>
+
+    <script th:inline="javascript">
+        const user = /*[[${user}]]*/ {};
+    </script>
+</body>
+</html>
